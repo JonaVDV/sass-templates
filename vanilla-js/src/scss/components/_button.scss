@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.button{
+  appearance: none;
+  padding: $button-padding;
+  border-radius: $button-border-radius; 
+  border: $button-border;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+
+  transition: background-color $button-transition-duration ease-in-out;
+
+  &[data-type="primary"]{
+    background-color: $button-primary-background-color;
+    color: $button-primary-color;
+
+    &:hover{
+      background-color: $button-primary-background-color-hover;
+    }
+  }
+
+  &[data-type="error"]{
+    background-color: $button-error-background-color;
+    color: $button-error-color;
+
+    &:hover{
+      background-color: $button-error-background-color-hover;
+    }
+  }
+
+  &[data-type="success"]{
+    background-color: $button-success-background-color;
+    color: $button-success-color;
+
+    &:hover{
+      background-color: $button-success-background-color-hover;
+    }
+  }
+
+
+}

@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+
+:root{
+  @each $screen-size, $sizes in $font-sizes {
+    @if $screen-size == 'small' {
+      @include set-font-sizes($sizes);
+    }
+    @else if $screen-size == 'medium' {
+      @include mq(small) {
+        @include set-font-sizes($sizes);
+      }
+    }
+    @else if $screen-size == 'large' {
+      @include mq(medium) {
+        @include set-font-sizes($sizes);
+      }
+    }
+  }
+
+
+  
+  @each $map-name, $map-colors in $active-theme {
+    @each $lightness, $value in $map-colors {
+      --clr-#{$map-name}-#{$lightness}: #{$value};
+    }
+  }
+}

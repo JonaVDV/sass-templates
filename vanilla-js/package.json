@@ -1,0 +1,19 @@
+{
+  "name": "vanilla-js",
+  "type": "module",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "forward-styles": "node ./forward-styles.js"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "postcss": "^8.4.27",
+    "sass": "^1.64.2",
+    "typescript": "^4.5.4",
+    "vite": "^4.4.9"
+  }
+}

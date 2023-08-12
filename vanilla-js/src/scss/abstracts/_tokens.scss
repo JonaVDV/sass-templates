@@ -1,0 +1,59 @@
+@use './colors' as *;
+@use './breakpoints' as *;
+@use './typography' as *;
+@use './sizes' as *;
+@use './border-radius' as *;
+
+
+$active-theme: $default;
+
+// general styles
+
+$body-background-color: $clr-neutral-400;
+$body-text-color: $clr-neutral-900;
+$body-font-family: $ff-primary;
+$body-font-size: $fs-400;
+$body-line-height: $line-height-medium;
+
+// layout 
+
+$section-padding: $size-10;
+
+$wrapper-padding: 4em;
+$wrapper-max-width: 60em;
+$wrapper-narrow-max-width: 40em;
+$wrapper-wide-max-width: 80em;
+
+// header
+$header-background-color: $clr-brand-secondary-300;
+$header-padding-block: $size-7;
+$header-inner-justify-content: space-between;
+
+$navigation-link-color: $clr-neutral-100;
+$navigation-link-hover-color: $clr-brand-primary-600;
+$navigation-link-text-decoration: none;
+$navigation-space-between: $size-10;
+
+// buttons
+
+$button-padding: $size-2 $size-10;
+$button-border-radius: $border-radius-2;
+$button-border: none;
+$button-font-size: $fs-400;
+$button-font-weight: $font-weight-bold;
+$button-transition-duration: 0.4s;
+
+$button-primary-background-color: $clr-brand-primary-600;
+$button-primary-background-color-hover: $clr-brand-primary-400;
+$button-primary-color: $clr-neutral-100;
+
+$button-error-background-color: $clr-state-error-600;
+$button-error-background-color-hover: $clr-state-error-300;
+$button-error-color: $clr-neutral-100;
+
+$button-success-background-color: $clr-state-success-400;
+$button-success-background-color-hover: $clr-state-success-300;
+$button-success-color: $clr-neutral-100;
+
+
+

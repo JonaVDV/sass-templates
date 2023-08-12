@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.site-navigation{
+
+  ul{
+    gap: $navigation-space-between;
+  }
+
+  a{
+    color: $navigation-link-color;
+    text-decoration: $navigation-link-text-decoration;
+    transition: color 300ms ease-in-out;
+
+    &:hover{
+      color: $navigation-link-hover-color;
+    }
+  }
+}

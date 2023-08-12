@@ -1,0 +1,58 @@
+$-clr-brand-primary-dark: hsl(276, 51%, 41%);
+$-clr-brand-primary-light: hsl(276, 57%, 60%);
+
+$-clr-neutral-light: hsl(0, 0%, 100%);
+$-clr-neutral-mid: hsl(185, 11%, 81%);
+$-clr-neutral-dark: hsl(0, 0%, 0%);
+
+$-clr-brand-secondary-dark: hsl(246, 45%, 28%);
+$-clr-brand-secondary-light: hsl(244, 53%, 53%);
+$-clr-brand-secondary-very-light: hsl(244, 75%, 66%);
+
+
+$default: (
+  "brand-primary": (
+    "400": $-clr-brand-primary-light,
+    "600": $-clr-brand-primary-dark, 
+  ),
+
+  "brand-secondary": (
+    "300": $-clr-brand-secondary-very-light,
+    "400": $-clr-brand-secondary-light,
+    "800": $-clr-brand-secondary-dark,
+  ),
+
+  "neutral": (
+    "100": $-clr-neutral-light,
+    "400": $-clr-neutral-mid,
+    "900": $-clr-neutral-dark,
+  ),
+
+  "state-success": (
+    "300": hsl(123, 79%, 65%),
+    "400": hsl(120, 100%, 40%),
+  ),
+
+  "state-error": (
+    "300": hsl(0, 100%, 65%),
+    "600": hsl(0, 100%, 40%),
+  ),
+);
+
+$clr-brand-primary-400: var(--clr-brand-primary-400);
+$clr-brand-primary-600: var(--clr-brand-primary-600);
+
+$clr-brand-secondary-300: var(--clr-brand-secondary-300);
+$clr-brand-secondary-400: var(--clr-brand-secondary-400);
+$clr-brand-secondary-800: var(--clr-brand-secondary-800);
+
+$clr-neutral-100: var(--clr-neutral-100);
+$clr-neutral-400: var(--clr-neutral-400);
+$clr-neutral-900: var(--clr-neutral-900);
+
+$clr-state-success-300: var(--clr-state-success-300);
+$clr-state-success-400: var(--clr-state-success-400);
+
+$clr-state-error-300: var(--clr-state-error-300);
+$clr-state-error-600: var(--clr-state-error-400);
+

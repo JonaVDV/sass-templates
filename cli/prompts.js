@@ -13,13 +13,11 @@ function askProjectDirectory() {
       validate: function (value) {
         const currentPath = path.resolve('./');
         if (!value.length) {
-          // create a folder in the current directory
           const files = fs.readdirSync(currentPath);
           if (files.length) {
             return 'Current directory is not empty, please enter a project name.';
           }
         }
-        // fs.mkdirSync(currentPath + '/' + value);
         return true;
       }
     },
@@ -33,8 +31,8 @@ function askProjectType() {
       name: 'projectType',
       type: 'list',
       message: 'What type of project would you like to generate?',
-      choices: ['vanlila','astro', 'sveltekit' ],
-      default: 'vanlila',
+      choices: ['vanilla-js','astro', 'sveltekit' ],
+      default: 'vanilla-js',
     },
   ]
   return inquirer.prompt(question)
@@ -101,28 +99,25 @@ promptUser().then((answers) => {
   createProject(answers.projectDirectory, answers.projectType, answers.git, answers.install);
 });
 
-function createProject(directory, projectType, git, install){
-  // get the folder contents of the template directory
-  const templateDir = path.resolve(projectType);
+async function createProject(directory, projectType, git, install){
+  const templateDir = path.resolve(new URL(import.meta.url).pathname, `../../${projectType}`);
   const targetDir = path.resolve(directory);
-
-  fs.mkdirSync(targetDir);
-
-  // copy the template directory to the target directory if it exists
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir);
+  }
   if (fs.existsSync(templateDir)) {
+    console.log(`\nCopying project files...`);
     fs.copySync(templateDir, targetDir, {
-      filter: (src, dest) => {
+      filter: (src) => {
       //  filter out node_modules
         if (src.indexOf('node_modules') !== -1) {
           return false;
         }
         return true;
       }
-    });
+    })
     
   }
-
-  // initialize git if the user wants to
   if (git) {
     spawnSync('git', ['init'], { cwd: targetDir, stdio: 'inherit', shell: true });
   }

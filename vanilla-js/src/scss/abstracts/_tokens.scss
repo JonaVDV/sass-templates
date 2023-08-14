@@ -9,7 +9,7 @@ $active-theme: $default;
 
 // general styles
 
-$body-background-color: $clr-neutral-400;
+$body-background-color: $clr-neutral-000;
 $body-text-color: $clr-neutral-900;
 $body-font-family: $ff-primary;
 $body-font-size: $fs-400;
@@ -17,43 +17,49 @@ $body-line-height: $line-height-medium;
 
 // layout 
 
-$section-padding: $size-10;
+$section-padding: clamp($size-8, 15vw, $size-15);
 
 $wrapper-padding: 4em;
 $wrapper-max-width: 60em;
 $wrapper-narrow-max-width: 40em;
 $wrapper-wide-max-width: 80em;
 
+$grid-auto-fit-min-column-width: pxToRem(200);
+$flex-row-gap: $size-8;
+$flex-column-gap: $size-8;
+
 // header
-$header-background-color: $clr-brand-secondary-300;
+$header-background-color: $clr-neutral-900;
 $header-padding-block: $size-7;
 $header-inner-justify-content: space-between;
 
-$navigation-link-color: $clr-neutral-100;
-$navigation-link-hover-color: $clr-brand-primary-600;
+$navigation-link-color: $clr-neutral-000;
+$navigation-link-hover-color: $clr-neutral-900;
 $navigation-link-text-decoration: none;
 $navigation-space-between: $size-10;
+
+$footer-padding: $size-10 0;
+$footer-font-size: $fs-400;
+$footer-link-color: $clr-neutral-000;
+$footer-background-color: $clr-neutral-900;
+$footer-link-text-decoration: none;
+$footer-inner-justify-content: space-between;
+$footer-inner-align-items: center;
+
+///@property {String} $footer-grid-areas - grid areas for advanced footer layout
+$footer-grid-areas: "footer-left footer-center footer-right";
 
 // buttons
 
 $button-padding: $size-2 $size-10;
 $button-border-radius: $border-radius-2;
-$button-border: none;
+$button-border: 2px solid $clr-neutral-900;
 $button-font-size: $fs-400;
 $button-font-weight: $font-weight-bold;
-$button-transition-duration: 0.4s;
 
-$button-primary-background-color: $clr-brand-primary-600;
-$button-primary-background-color-hover: $clr-brand-primary-400;
-$button-primary-color: $clr-neutral-100;
-
-$button-error-background-color: $clr-state-error-600;
-$button-error-background-color-hover: $clr-state-error-300;
-$button-error-color: $clr-neutral-100;
-
-$button-success-background-color: $clr-state-success-400;
-$button-success-background-color-hover: $clr-state-success-300;
-$button-success-color: $clr-neutral-100;
-
+$button-primary-background-color: $clr-neutral-900;
+$button-primary-background-color-hover: transparent;
+$button-primary-color: $clr-neutral-000;
+$button-primary-color-hover: $clr-neutral-900;
 
 

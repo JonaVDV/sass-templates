@@ -1,10 +1,7 @@
 @use '../abstracts' as *;
 
-.site-navigation{
-
-  ul{
-    gap: $navigation-space-between;
-  }
+.nav{
+  align-items: center;  
 
   a{
     color: $navigation-link-color;

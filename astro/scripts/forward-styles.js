@@ -1,24 +1,22 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import * as readline from 'node:readline';
-import { stdin as input, stdout as output } from 'node:process';
 
 const scssPath = './src/scss/';
 
-const rl = readline.createInterface({
-  input,
-  output,
-});
+scanDirectories();
 
-setDirectory();
-
-function setDirectory() {
-  rl.question('Enter the path of the directory to scan: ', (answer) => {
-    if (answer) {
-      scanDirectory(scssPath + answer);
-    } else {
-      rl.close();
+function scanDirectories() {
+  fs.readdir(scssPath, (err, files) => {
+    if (err) {
+      console.log(err);
+      process.exit(1);
     }
+    const directories = files.filter((file) => {
+      return fs.statSync(path.join(scssPath, file)).isDirectory();
+    });
+    directories.forEach((directory) => {
+      scanDirectory(path.join(scssPath, directory));
+    });
   });
 }
 
@@ -33,7 +31,6 @@ function scanDirectory(path) {
       console.log(err);
       process.exit(1);
     }
-    console.log(typeof files[0]);
     processFiles(files, path);
   });
 }
@@ -77,7 +74,6 @@ function createIndexFile(path, files) {
     } else {
       console.log(`Created _index.scss file in ${path}`);
       writeIndex(path, files);
-      rl.close();
     }
   });
 
@@ -89,14 +85,12 @@ function createIndexFile(path, files) {
  * @param {string[]} files - An array of file names to be imported in the _index.scss file.
  * @returns {void}
  */
-function writeIndex(path, files) {
-  fs.writeFile(`${path}/_index.scss`, `${files.map((file) => `@forward '${file}';`).join('\n')}`, (err) => {
+async function writeIndex(path, files) {
+  fs.writeFileSync(`${path}/_index.scss`, `${files.map((file) => `@forward '${file}';`).join('\n')}`, (err) => {
     if (err) {
       console.log(err);
     } else {
       console.log(`Wrote _index.scss file in ${path}`);
-      rl.close();
     }
-  });
+  })
 }
-

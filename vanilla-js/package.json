@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "forward-styles": "node ./forward-styles.js"
+    "forward-styles": "node ./scripts/forward-styles.js"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",

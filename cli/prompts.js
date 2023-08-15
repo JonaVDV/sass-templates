@@ -1,4 +1,4 @@
-// import fs from 'node:fs';
+#!/usr/bin/env node
 import path from 'node:path';
 import inquirer from 'inquirer';
 import fs from 'fs-extra'
@@ -91,8 +91,6 @@ export async function promptUser() {
 }
 
 promptUser().then((answers) => {
-  console.log(answers);
-  // console.log();
   answers.projectDirectory = answers.projectDirectory.replace(/^\/|\/$/g, '');
   if (answers.projectDirectory.length) {
     console.log(`\nGenerating project in ${answers.projectDirectory}...`);
@@ -104,8 +102,9 @@ promptUser().then((answers) => {
 });
 
 async function createProject(directory, projectType, git, install){
-  const templateDir = path.resolve(process.cwd(), `/${projectType}`);
-  const targetDir = path.resolve(directory);
+  const templateDir = path.join(process.cwd(), projectType);
+  console.log(templateDir);
+  const targetDir = path.join(process.cwd(), directory);
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir);
   }

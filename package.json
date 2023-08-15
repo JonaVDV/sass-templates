@@ -1,15 +1,13 @@
 {
   "name": "@jvdv/sass-templates",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "sass-templates": "node ./cli/prompts.js"
-  },
+  "bin": "./cli/prompts.js",
   "keywords": [],
   "author": "Jona van der Vlist",
   "license": "ISC",

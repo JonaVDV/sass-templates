@@ -91,6 +91,8 @@ export async function promptUser() {
 }
 
 promptUser().then((answers) => {
+  console.log(answers);
+  // console.log();
   answers.projectDirectory = answers.projectDirectory.replace(/^\/|\/$/g, '');
   if (answers.projectDirectory.length) {
     console.log(`\nGenerating project in ${answers.projectDirectory}...`);
@@ -102,7 +104,7 @@ promptUser().then((answers) => {
 });
 
 async function createProject(directory, projectType, git, install){
-  const templateDir = path.resolve(new URL(import.meta.url).pathname.slice(1), `../../${projectType}`)
+  const templateDir = path.resolve(process.cwd(), `/${projectType}`);
   const targetDir = path.resolve(directory);
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir);
@@ -111,6 +113,7 @@ async function createProject(directory, projectType, git, install){
     console.log(`\nCopying project files...`);
     fs.copySync(templateDir, targetDir, {
       filter: (src) => {
+        console.log(src);
         if (src.indexOf('node_modules') !== -1) {
           return false;
         }

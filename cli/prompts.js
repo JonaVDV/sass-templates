@@ -103,22 +103,18 @@ promptUser().then((answers) => {
 
 async function createProject(directory, projectType, git, install){
   const templateDir = path.join(process.cwd(), projectType);
-  console.log(templateDir);
-  const targetDir = path.join(process.cwd(), directory);
+  const targetDir = path.join(process.env.INIT_CWD, directory);
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir);
   }
   if (fs.existsSync(templateDir)) {
-    console.log(`\nCopying project files...`);
-    fs.copySync(templateDir, targetDir, {
-      filter: (src) => {
-        console.log(src);
-        if (src.indexOf('node_modules') !== -1) {
-          return false;
-        }
-        return true;
-      }
-    })
+    try {
+      fs.accessSync(templateDir, fs.constants.R_OK | fs.constants.W_OK);
+    } catch (error) {
+      console.log('no access!', error);
+    }
+
+    fs.copySync(templateDir, targetDir);
     
   }
   if (git) {
@@ -130,4 +126,3 @@ async function createProject(directory, projectType, git, install){
   }
 
 }
-

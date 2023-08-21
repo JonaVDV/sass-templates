@@ -50,18 +50,6 @@ function askForGit() {
   return inquirer.prompt(question)
 }
 
-function askForTypeScript() {
-  const question = [
-    {
-      name: 'typescript',
-      type: 'confirm',
-      message: 'Would you like to use TypeScript?',
-      default: true,
-    },
-  ]
-  return inquirer.prompt(question)
-}
-
 function askForInstall() {
   const question = [
     {

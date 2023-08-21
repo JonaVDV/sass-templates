@@ -12,11 +12,11 @@ container queries
 }
 
 .wrapper[data-width="wide"]{
-  --wrapper-max-width: $wrapper-wide-max-width;
+  --wrapper-max-width: #{$wrapper-wide-max-width};
 }
 
 .wrapper[data-width="narrow"]{
-  --wrapper-max-width: $wrapper-narrow-max-width;
+  --wrapper-max-width: #{$wrapper-narrow-max-width};
 }
 
 .wrapper[data-width="full"]{

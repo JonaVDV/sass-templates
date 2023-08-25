@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.button{
+  appearance: none;
+  padding: $button-padding;
+  border-radius: $button-border-radius; 
+  border: $button-border;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  transition: color, background-color .4s ease-in-out;
+
+  &[data-type="primary"]{
+    background-color: $button-primary-background-color;
+    color: $button-primary-color;
+
+    &:hover{
+      background-color: $button-primary-background-color-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+}

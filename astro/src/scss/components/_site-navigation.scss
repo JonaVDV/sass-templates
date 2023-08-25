@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.nav{
+  align-items: center;  
+
+  a{
+    color: $navigation-link-color;
+    text-decoration: $navigation-link-text-decoration;
+    transition: color 300ms ease-in-out;
+
+    &:hover{
+      color: $navigation-link-hover-color;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.primary-footer{
+    background-color: $footer-background-color;
+    padding: $footer-padding;
+    
+
+    .footer-inner{
+        display: flex;
+        justify-content: $footer-inner-justify-content;
+        align-items: $footer-inner-align-items;
+    }
+
+    a{
+        color: $footer-link-color;
+        text-decoration: $footer-link-text-decoration;
+    }
+}

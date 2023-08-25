@@ -1,0 +1,13 @@
+// map over the colors map and create utilitiy classes for the colors
+@use '../abstracts' as *;
+
+@each $map-name, $map-colors in $active-theme {
+  @each $lightness, $value in $map-colors {
+    .clr-#{$map-name}-#{$lightness} {
+      color: $value;
+    }
+    .bg-#{$map-name}-#{$lightness} {
+      background-color: $value;
+    }
+  }
+}

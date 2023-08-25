@@ -1,0 +1,14 @@
+$-clr-neutral-light: hsl(0, 0%, 100%);
+$-clr-neutral-dark: hsl(0, 0%, 0%);
+
+
+$default: (
+  "neutral": (
+    "000": $-clr-neutral-light,
+    "900": $-clr-neutral-dark,
+  ),
+);
+
+
+$clr-neutral-000: var(--clr-neutral-000);
+$clr-neutral-900: var(--clr-neutral-900);

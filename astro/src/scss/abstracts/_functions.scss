@@ -1,0 +1,12 @@
+@use 'sass:math';
+
+@function pxToRem($px){
+  $unit: unit($px);
+  @debug $unit;
+
+  @if not unitless($px) {
+    @error "The value #{$px} has a unit of #{$unit}. Please pass a unitless number to pxToRem.";
+  }
+  $remValue: math.div($px, 16) + rem;
+  @return $remValue;
+}

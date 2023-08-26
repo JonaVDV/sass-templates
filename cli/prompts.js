@@ -67,13 +67,11 @@ export async function promptUser() {
   const projectDirectory = await askProjectDirectory();
   const projectType = await askProjectType();
   const git = await askForGit();
-  const typescript = await askForTypeScript();
   const install = await askForInstall();
   return {
     ...projectDirectory,
     ...projectType,
     ...git,
-    ...typescript,
     ...install,
   }
 }

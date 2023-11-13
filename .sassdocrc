@@ -1,0 +1,22 @@
+{
+  "title": "@jvdv/sass-templates Documentation",
+  "source": {
+    "include": ["./vanilla-js/src/scss"]
+  },
+  "groups": {
+    "font-families": "Font Families",
+    "font-sizes": "Font Sizes",
+    "font-weights": "Font Weights",
+    "line-heights": "Line Heights",
+    "colors": "Colors",
+    "spacing": "Spacing",
+    "breakpoints": "Breakpoints",
+    "mixins": "Mixins",
+    "functions": "Functions"
+  },
+  "display": {
+    "access": ["public"],
+    "watermark": true,
+    "alias": true
+  }
+}

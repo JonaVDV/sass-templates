@@ -18,18 +18,18 @@ $sizes: (
   
 // size variables for usage in the _tokens.scss file or the rest of your project
 
-$size-1: map-get($sizes, 1);
-$size-2: map-get($sizes, 2);
-$size-3: map-get($sizes, 3);
-$size-4: map-get($sizes, 4);
-$size-5: map-get($sizes, 5);
-$size-6: map-get($sizes, 6);
-$size-7: map-get($sizes, 7);
-$size-8: map-get($sizes, 8);
-$size-9: map-get($sizes, 9);
-$size-10: map-get($sizes, 10);
-$size-11: map-get($sizes, 11);
-$size-12: map-get($sizes, 12);
-$size-13: map-get($sizes, 13);
-$size-14: map-get($sizes, 14);
-$size-15: map-get($sizes, 15);
+$size-1: var(--size-1);
+$size-2: var(--size-2);
+$size-3: var(--size-3);
+$size-4: var(--size-4);
+$size-5: var(--size-5);
+$size-6: var(--size-6);
+$size-7: var(--size-7);
+$size-8: var(--size-8);
+$size-9: var(--size-9);
+$size-10: var(--size-10);
+$size-11: var(--size-11);
+$size-12: var(--size-12);
+$size-13: var(--size-13);
+$size-14: var(--size-14);
+$size-15: var(--size-15);

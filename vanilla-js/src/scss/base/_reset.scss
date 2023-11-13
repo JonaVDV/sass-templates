@@ -1,22 +1,45 @@
+/**
+ * Applies a border-box box-sizing to all elements, including pseudo-elements.
+ */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/**
+ * Reset all margin, padding and font properties for all elements.
+ */
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
 
+/**
+ * Resets the height of the html and body elements to 100%.
+ */
 html, body{
   height: 100%;
 }
 
+/**
+ * Resets the default styles for images, pictures and videos by setting their display property to block and their maximum width to 100%.
+ */
 img, picture, video {
   display: block;
   max-width: 100%;
 }
 
+/**
+ * Remove the default list-style from unordered lists with role="list".
+ */
 ul[role="list"] {
   list-style: none;
+}
+
+/**
+ * This rule sets the `text-decoration-skip-ink` property to `auto` for all anchor tags that do not have a class attribute.
+ * This ensures that the underline for the anchor tag does not skip descenders (such as the bottom of the letter "g").
+ */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }

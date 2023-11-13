@@ -1,11 +1,6 @@
-.header-1{
+@use '../abstracts/' as *;
 
+.heading-1{
+    // @include heading();
 }
 
-.header-2{
-
-}
-
-.header-3{
-
-}

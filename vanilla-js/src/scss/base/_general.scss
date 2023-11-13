@@ -1,5 +1,8 @@
 @use '../abstracts' as *;
 
+/**
+ * General styles
+ */
 body{
   background-color: $body-background-color;
   color: $body-text-color;
@@ -9,7 +12,12 @@ body{
   text-rendering: optimizeSpeed;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+/**
+ * Links
+ */
+a{
+  color: $link-color;
+  &:is(:hover, :focus){
+    color: $link-color-hover;
+  }
 }
-

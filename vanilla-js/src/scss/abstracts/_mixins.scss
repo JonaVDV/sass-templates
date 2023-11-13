@@ -1,5 +1,8 @@
 @use './breakpoints' as *;
 
+/// creates a media query with the given breakpoint value
+/// @param {string} $breakpoint - breakpoint name 
+/// @group mixins
 @mixin mq($breakpoint){
   @if map-has-key($breakpoints, $breakpoint){
     $value: map-get($breakpoints, $breakpoint);
@@ -12,7 +15,7 @@
   }
 }
 
-/// @mixin mq-max - creates a media query with the given max-width value  
+/// creates a media query with the given max-width value  
 /// @param {string} $breakpoint - breakpoint name
 /// 
 /// @example
@@ -22,6 +25,7 @@
 /// }
 /// 
 ///  
+/// @group mixins
 @mixin mq-max($breakpoint){
   @if map-has-key($breakpoints, $breakpoint){
     $value: map-get($breakpoints, $breakpoint);
@@ -47,14 +51,24 @@
 /// }
 /// 
 /// 
-@mixin header($font-size, $font-weight, $line-height, $color){
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-  @content;
-}
-
+/// @group mixins
+@mixin heading(
+  $font-size,
+  $font-weight,
+  $line-height,
+  $color
+  ){
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color: $color;
+    @content;
+  }
+  
+/// set the font sizes properties for the given sizes 
+/// @param {map} $sizes - map of font sizes
+/// @output {css variables} --fs-#{$size} - css variable for each font size
+/// @group mixins
 @mixin set-font-sizes($sizes) {
   @each $size, $value in $sizes {
     --fs-#{$size}: #{$value};

@@ -1,5 +1,17 @@
 @use '../abstracts/' as *;
 
+/**
+ * Defines the root element styles, including font sizes and theme colors.
+ * 
+ * @root
+ * @each $screen-size, $sizes in $font-sizes - Iterates over the font sizes for each screen size and sets the font sizes accordingly.
+ * @if $screen-size == 'small' - If the screen size is small, sets the font sizes using the set-font-sizes mixin.
+ * @else if $screen-size == 'medium' - If the screen size is medium, sets the font sizes using the set-font-sizes mixin inside a media query for small screens.
+ * @else if $screen-size == 'large' - If the screen size is large, sets the font sizes using the set-font-sizes mixin inside a media query for medium screens.
+ * 
+ * @each $map-name, $map-colors in $active-theme - Iterates over the active theme map and sets the theme colors accordingly.
+ * @each $lightness, $value in $map-colors - Iterates over the color values for each lightness level and sets the corresponding CSS variable for each color.
+ */
 :root{
   @each $screen-size, $sizes in $font-sizes {
     @if $screen-size == 'small' {
@@ -24,4 +36,9 @@
       --clr-#{$map-name}-#{$lightness}: #{$value};
     }
   }
+
+  @each $size, $value in $sizes{
+    --size-#{$size}: #{$value};
+  } 
+
 }

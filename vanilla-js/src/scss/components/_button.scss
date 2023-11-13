@@ -1,6 +1,9 @@
 @use '../abstracts' as *;
 
 .button{
+  display: inline-flex;
+  line-height: 1;
+  cursor: pointer;
   appearance: none;
   padding: $button-padding;
   border-radius: $button-border-radius; 
@@ -13,7 +16,7 @@
     background-color: $button-primary-background-color;
     color: $button-primary-color;
 
-    &:hover{
+    &:is(:hover, :focus){
       background-color: $button-primary-background-color-hover;
       color: $button-primary-color-hover;
     }

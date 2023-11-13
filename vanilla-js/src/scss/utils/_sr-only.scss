@@ -1,0 +1,15 @@
+/**
+ * sr-only class
+ * this class is used to hide elements from the screen but not from screen readers. this is useful for accessibility.
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

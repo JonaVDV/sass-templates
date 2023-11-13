@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+@each $screen-size, $sizes in $font-sizes{
+    @if $screen-size == 'small'{
+        @each $size, $value in $sizes{
+            .fs-#{$size}{
+                font-size: $value;
+            }
+        }
+    }
+}

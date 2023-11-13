@@ -80,8 +80,6 @@ promptUser().then((answers) => {
   answers.projectDirectory = answers.projectDirectory.replace(/^\/|\/$/g, '');
   if (answers.projectDirectory.length) {
     console.log(`\nGenerating project in ${answers.projectDirectory}...`);
-
-    console.log('test1')
     createProject(answers.projectDirectory, answers.projectType, answers.git, answers.install);
   } else {
     console.log(`\nGenerating project in current directory...`);
@@ -90,9 +88,7 @@ promptUser().then((answers) => {
 });
 
 async function createProject(directory, projectType, git, install) {
-
   const templateDir = path.resolve(new URL(import.meta.url).pathname, '../../', projectType).slice(3);
-  console.log(templateDir);
   const targetDir = path.join(process.env.INIT_CWD, directory);
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir);

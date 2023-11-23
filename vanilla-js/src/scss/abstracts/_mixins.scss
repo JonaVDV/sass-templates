@@ -74,3 +74,48 @@
     --fs-#{$size}: #{$value};
   }
 }
+
+/// Mixin for creating media queries.
+/// It checks if the provided breakpoint has a unit and if it's in pixels, it converts it to rem.
+/// If the breakpoint is not in pixels, it uses the provided unit.
+///
+/// @access public
+/// @name cq
+/// @author JonaVDV
+/// @since Version 1.0.0
+///
+/// @param {Number} $breakpoint - The breakpoint at which the media query should apply. Must have a unit.
+///
+/// @example scss - Using the mixin with a pixel value
+///   @include cq(600px) {
+///     font-size: 1.2rem;
+///   }
+///
+/// @example scss - Using the mixin with a rem value
+///   @include cq(37.5rem) {
+///     font-size: 1.2rem;
+///   }
+///
+/// @throws {Error} Throws an error if the breakpoint is unitless.
+@mixin cq($breakpoint){
+  @if unitless($breakpoint){
+    @error 'breakpoint #{$breakpoint} must have a unit';
+  }
+
+  @if unit($breakpoint) == 'px'{
+    @media (min-width: pxToRem($breakpoint)){
+      @content;
+    }
+  } @else{
+    @media (min-width: $breakpoint){
+      @content;
+    }
+  }
+}
+
+@mixin container($type: inline-size, $name){
+  container-type: $type;
+  @if $name != null{
+    container-name: $name;
+  }
+}

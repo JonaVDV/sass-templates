@@ -1,36 +1,13 @@
 $-clr-neutral-light: hsl(0, 0%, 100%);
 $-clr-neutral-dark: hsl(0, 0%, 0%);
 
-$-clr-green-light: hsla(132, 51%, 49%, 1);
-$-clr-blue-light: hsla(221, 100%, 48%, 1);
-$-clr-blue-dark: hsla(226, 93%, 24%, 1);
-
-$-clr-yellow-mid: hsla(56, 100%, 46%, 1);
-$-clr-gray-very-light: hsla(240, 33%, 99%, 1);
-
 $default: (
   "neutral": (
     "000": $-clr-neutral-light,
     "900": $-clr-neutral-dark,
-  ),
-  "brand": (
-    "400": $-clr-blue-light,
-    "500": $-clr-green-light,
-    "800": $-clr-blue-dark,
-  ),
-  "accent": (
-    "100": $-clr-gray-very-light,
-    "400": $-clr-yellow-mid,
   ),
 );
 
 
 $clr-neutral-000: var(--clr-neutral-000);
 $clr-neutral-900: var(--clr-neutral-900);
-
-$clr-brand-400: var(--clr-brand-400);
-$clr-brand-500: var(--clr-brand-500);
-$clr-brand-800: var(--clr-brand-800);
-
-$clr-accent-100: var(--clr-accent-100);
-$clr-accent-400: var(--clr-accent-400);

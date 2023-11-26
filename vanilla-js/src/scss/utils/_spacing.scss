@@ -12,31 +12,31 @@
 .margin {
   @each $size, $value in $sizes {
     &-#{$size} {
-      margin: $value;
+      margin: var(--size-#{$size}, $value);
     }
 
     &-block-start-#{$size} {
-      margin-block-start: $value;
+      margin-block-start: var(--size-#{$size}, $value);
     }
 
     &-block-end-#{$size} {
-      margin-block-end: $value;
+      margin-block-end: var(--size-#{$size}, $value);
     }
 
     &-inline-start-#{$size} {
-      margin-inline-start: $value;
+      margin-inline-start: var(--size-#{$size}, $value);
     }
 
     &-inline-end-#{$size} {
-      margin-inline-end: $value;
+      margin-inline-end: var(--size-#{$size}, $value);
     }
 
     &-block-#{$size}{
-      margin-block: $value;
+      margin-block: var(--size-#{$size}, $value);
     }
 
     &-inline-#{$size}{
-      margin-inline: $value;
+      margin-inline: var(--size-#{$size}, $value);
     }
   }
 }
@@ -44,31 +44,31 @@
 .padding{
   @each $size, $value in $sizes {
     &-#{$size} {
-      padding: $value;
+      padding: var(--size-#{$size}, $value);
     }
 
     &-block-start-#{$size} {
-      padding-block-start: $value;
+      padding-block-start: var(--size-#{$size}, $value);
     }
 
     &-block-end-#{$size} {
-      padding-block-end: $value;
+      padding-block-end: var(--size-#{$size}, $value);
     }
 
     &-inline-start-#{$size} {
-      padding-inline-start: $value;
+      padding-inline-start: var(--size-#{$size}, $value);
     }
 
     &-inline-end-#{$size} {
-      padding-inline-end: $value;
+      padding-inline-end: var(--size-#{$size}, $value);
     }
 
     &-block-#{$size}{
-      padding-block: $value;
+      padding-block: var(--size-#{$size}, $value);
     }
 
     &-inline-#{$size}{
-      padding-inline: $value;
+      padding-inline: var(--size-#{$size}, $value);
     }
   }
 }

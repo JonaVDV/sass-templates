@@ -97,17 +97,17 @@
 ///   }
 ///
 /// @throws {Error} Throws an error if the breakpoint is unitless.
-@mixin cq($breakpoint){
+@mixin cq($breakpoint, $name: null){
   @if unitless($breakpoint){
     @error 'breakpoint #{$breakpoint} must have a unit';
   }
 
   @if unit($breakpoint) == 'px'{
-    @media (min-width: pxToRem($breakpoint)){
+    @container $name (min-width: pxToRem($breakpoint)){
       @content;
     }
   } @else{
-    @media (min-width: $breakpoint){
+    @container $name (min-width: $breakpoint){
       @content;
     }
   }

@@ -1,6 +1,14 @@
 @use '../abstracts/' as *;
 
 .heading-1{
-    // @include heading();
+    @include heading($fs-900, $font-weight-bold, $line-height-heading);
+}
+
+.heading-2{
+    @include heading($fs-800, $font-weight-bold, $line-height-heading);
+}
+
+.heading-3{
+    @include heading($fs-700, $font-weight-bold, $line-height-heading);
 }
 

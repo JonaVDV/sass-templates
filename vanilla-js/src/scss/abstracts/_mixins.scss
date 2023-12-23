@@ -1,4 +1,6 @@
-@use './breakpoints' as *;
+@use 'tokens' as *;
+@use 'breakpoints' as *;
+@use 'typography' as *;
 
 /// creates a media query with the given breakpoint value
 /// @param {string} $breakpoint - breakpoint name 
@@ -39,15 +41,15 @@
 }
 
 
-/// creates a header with the given font-size, font-weight, line-height and color
-/// @param {string} $font-size - font-size value of the header
-/// @param {number} $font-weight - font-weight value of the header
-/// @param {number} $line-height - line-height value of the header
-/// @param {color} $color - color value of the header
+/// creates a heading with the given font-size, font-weight, line-height and color
+/// @param {string} $font-size - font-size value of the heading
+/// @param {number} $font-weight - font-weight value of the heading
+/// @param {number} $line-height - line-height value of the heading
+/// @param {color} $color - color value of the heading
 /// 
 /// @example
-/// .header-1{
-///   @include header(1rem, 700, 1);
+/// .heading-1{
+///   @include heading(1rem, 700, 1);
 /// }
 /// 
 /// 
@@ -55,9 +57,11 @@
 @mixin heading(
   $font-size,
   $font-weight,
-  $line-height,
-  $color
+  $font-family: $heading-font-family,
+  $line-height: $heading-line-height,
+  $color: $heading-color
   ){
+    font-family: $font-family;
     font-size: $font-size;
     font-weight: $font-weight;
     line-height: $line-height;
@@ -75,7 +79,7 @@
   }
 }
 
-/// Mixin for creating media queries.
+/// Mixin for creating container queries.
 /// It checks if the provided breakpoint has a unit and if it's in pixels, it converts it to rem.
 /// If the breakpoint is not in pixels, it uses the provided unit.
 ///

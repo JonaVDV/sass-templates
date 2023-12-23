@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+// uses the same principle as the .flow class in /utils/_flow.scss
+.grid-flow{
+  display: grid;
+  gap: var(--grid-gap, $grid-gap);
+}

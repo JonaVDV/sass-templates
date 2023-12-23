@@ -1,17 +1,20 @@
 @use '../abstracts/' as *;
 
-.flex{
-  display: flex;
-  --row-gap: #{$flex-row-gap};
-  --column-gap: #{$flex-column-gap};
-  gap: var(--row-gap) var(--column-gap);
-}
-
 .flex-group{
   --row-gap: #{$flex-row-gap};
   --column-gap: #{$flex-column-gap};
   display: flex;
   flex-wrap: wrap;
   width: fit-content;
+  align-items: center;
   gap: var(--row-gap) var(--column-gap);
 }
+
+.flex-group.center{
+  justify-content: center;
+}
+
+.flex-group.space-between{
+  justify-content: space-between;
+}
+

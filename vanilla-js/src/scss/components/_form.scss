@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+label{
+  color: $form-label-color;
+  font-size: $form-label-font-size;
+  font-weight: $form-label-font-weight;
+  line-height: $form-label-line-height;
+}
+
+input:not(.button){
+  padding: $form-input-padding;
+  border: $form-input-border;
+  border-radius: $form-input-border-radius;
+  font-size: $form-input-font-size;
+  font-weight: $form-input-font-weight;
+}
+
+
+fieldset, .form-group{
+  display: grid;
+}
+
+.form-group{
+  gap: $form-group-gap;
+}
+
+fieldset{
+  border: none;
+  gap: $form-fieldset-gap;
+}

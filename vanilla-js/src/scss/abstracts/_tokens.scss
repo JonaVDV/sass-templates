@@ -66,4 +66,23 @@ $button-primary-background-color-hover: transparent;
 $button-primary-color: $clr-neutral-000;
 $button-primary-color-hover: $clr-neutral-900;
 
+// headings
+$heading-color: $clr-neutral-900;
+$heading-font-family: $ff-primary;
+$heading-line-height: $line-height-heading;
 
+// forms
+
+$form-label-color: $clr-neutral-900;
+$form-label-font-size: $fs-400;
+$form-label-font-weight: $font-weight-bold;
+$form-label-line-height: $line-height-medium;
+
+$form-input-padding: $size-1 $size-4;
+$form-input-border: 2px solid $clr-neutral-900;
+$form-input-border-radius: $border-radius-2;
+$form-input-font-size: $fs-400;
+$form-input-font-weight: $font-weight-bold;
+
+$form-fieldset-gap: $size-5;
+$form-group-gap: $size-3;

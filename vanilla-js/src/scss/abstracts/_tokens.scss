@@ -2,7 +2,6 @@
 @use './breakpoints' as *;
 @use './typography' as *;
 @use './sizes' as *;
-@use './border-radius' as *;
 
 
 $active-theme: $default;
@@ -18,6 +17,9 @@ $body-line-height: $line-height-medium;
 $link-color: $clr-neutral-900;
 $link-color-hover: $clr-neutral-000;
 
+// border-radius
+$border-radius-1: #{pxToRem(6px)};
+$border-radius-2: 0.625rem;
 // layout 
 
 $section-padding: clamp($size-8, 15vw, $size-15);
@@ -28,8 +30,11 @@ $wrapper-narrow-max-width: 40em;
 $wrapper-wide-max-width: 80em;
 
 $grid-auto-fit-min-column-width: pxToRem(200);
+
 $flex-row-gap: $size-8;
 $flex-column-gap: $size-8;
+
+$grid-gap: $size-8;
 
 // header
 $header-background-color: $clr-neutral-900;
@@ -41,6 +46,7 @@ $navigation-link-hover-color: $clr-neutral-900;
 $navigation-link-text-decoration: none;
 $navigation-space-between: $size-10;
 
+// footer
 $footer-padding: $size-10 0;
 $footer-font-size: $fs-400;
 $footer-link-color: $clr-neutral-000;
@@ -79,10 +85,11 @@ $form-label-font-weight: $font-weight-bold;
 $form-label-line-height: $line-height-medium;
 
 $form-input-padding: $size-1 $size-4;
-$form-input-border: 2px solid $clr-neutral-900;
+$form-input-default-border: 2px solid $clr-neutral-900;
 $form-input-border-radius: $border-radius-2;
 $form-input-font-size: $fs-400;
 $form-input-font-weight: $font-weight-bold;
+$form-input-focus-border: 2px solid blue;
 
 $form-fieldset-gap: $size-5;
 $form-group-gap: $size-3;

@@ -28,6 +28,19 @@ img, picture, video {
   display: block;
   max-width: 100%;
 }
+/**
+ * set the text-wrap property to balance for all headings to avoid orphans and widows
+*/
+h1, h2, h3, h4, h5, h6{
+  text-wrap: balance;
+}
+
+/**
+  * set the text-wrap property to pretty to avoid orphans and widows
+*/
+p{
+  text-wrap: pretty;
+}
 
 /**
  * Remove the default list-style from unordered lists with role="list".

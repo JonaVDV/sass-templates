@@ -8,6 +8,14 @@ $default: (
   ),
 );
 
+// invert the order of the default colors for dark mode
+// this means 000 is the darkest color and 900 is the lightest
+// $dark: (
+//   "neutral": (
+//     "000": $-clr-neutral-dark,
+//     "900": $-clr-neutral-light,
+//   ),
+// );
 
 $clr-neutral-000: var(--clr-neutral-000);
 $clr-neutral-900: var(--clr-neutral-900);

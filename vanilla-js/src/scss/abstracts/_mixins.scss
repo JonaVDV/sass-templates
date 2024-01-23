@@ -79,6 +79,17 @@
   }
 }
 
+/// 
+/// @param {Map} $color-map - the map of colors to loop over
+/// @output {css variables} --clr-#{$color-name}-#{$lightness} - css variable for each color
+@mixin set-color-properties($color-map){
+  @each $color-name, $color-values in $color-map{
+    @each $lightness, $value in $color-values{
+      --clr-#{$color-name}-#{$lightness}: #{$value};
+    }
+  }
+}
+
 /// Mixin for creating container queries.
 /// It checks if the provided breakpoint has a unit and if it's in pixels, it converts it to rem.
 /// If the breakpoint is not in pixels, it uses the provided unit.

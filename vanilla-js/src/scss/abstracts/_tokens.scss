@@ -6,6 +6,8 @@
 
 $active-theme: $default;
 
+$media-darkmode-enabled: false;
+
 // general styles
 
 $body-background-color: $clr-neutral-000;
@@ -31,8 +33,7 @@ $wrapper-wide-max-width: 80em;
 
 $grid-auto-fit-min-column-width: pxToRem(200);
 
-$flex-row-gap: $size-8;
-$flex-column-gap: $size-8;
+$flex-gap: $size-4;
 
 $grid-gap: $size-8;
 
@@ -93,3 +94,14 @@ $form-input-focus-border: 2px solid blue;
 
 $form-fieldset-gap: $size-5;
 $form-group-gap: $size-3;
+
+// dialogs/modals
+
+$modal-background-color: $clr-neutral-000;
+$modal-border-radius: $border-radius-2;
+$modal-box-shadow: 0 0 0.625rem rgba($clr-neutral-900, 0.25);
+$modal-inner-padding: $size-6;
+$modal-outer-padding: $size-8;
+$modal-max-width: 30em;
+$modal-backdrop-color: hsla(0, 0%, 0%, 0.8);
+$modal-outer-margin: 0;

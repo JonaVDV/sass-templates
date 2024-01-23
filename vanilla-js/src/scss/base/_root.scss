@@ -31,14 +31,20 @@
 
 
   
-  @each $map-name, $map-colors in $active-theme {
-    @each $lightness, $value in $map-colors {
-      --clr-#{$map-name}-#{$lightness}: #{$value};
-    }
-  }
+  @include set-color-properties($active-theme);
 
   @each $size, $value in $sizes{
     --size-#{$size}: #{$value};
   } 
 
+}
+
+@if $media-darkmode-enabled {
+  @media (prefers-color-scheme: dark) {
+    :root{
+      $active-theme: $dark;
+  
+      @include set-color-properties($active-theme);
+    }
+  }
 }
